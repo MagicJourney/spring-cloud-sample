@@ -1,0 +1,26 @@
+server:
+  port: 8280
+
+spring:
+  application:
+    name: turbine
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8260/eureka/
+
+turbine:
+  app-config: product
+  combine-host-port: true
+  cluster-name-expression: new String("default")
+
+logging:
+  level:
+    org.springframework: info

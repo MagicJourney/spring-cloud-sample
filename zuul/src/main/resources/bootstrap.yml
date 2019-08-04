@@ -1,0 +1,25 @@
+server:
+  port: 8290
+
+spring:
+  application:
+    name: zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8260/eureka/
+
+zuul:
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  routes:
+    user:
+      path: /user/**
+      service-id: user
+    product:
+      path: /product/**
+      service-id: product
+
+

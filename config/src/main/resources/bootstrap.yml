@@ -1,0 +1,32 @@
+server:
+  port: 8300
+
+
+# application name
+# profile active
+# label
+
+spring:
+  application:
+    name: config
+
+  cloud:
+    config:
+      server:
+        git:
+          # username:
+          # password:
+          uri: https://github.com/MagicJourney/spring-cloud-config-sample
+          # skip-ssl-validation: true
+          default-label: master
+          search-paths:
+          timeout: 5
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:8260/eureka/

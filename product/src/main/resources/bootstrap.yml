@@ -1,0 +1,25 @@
+server:
+  port: 2200
+
+logging:
+  level:
+    com.tanner: debug
+
+spring:
+  application:
+    name: product
+  # profiles:
+  #   active: dev
+
+  cloud:
+    config:
+      # discovery:
+      #   enabled: true
+      #   service-id: config
+      uri: http://192.168.1.125:8300/
+      # uri: http://config
+      profile: dev
+      # git 分支
+      label:
+
+
